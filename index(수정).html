@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>생활 & 과학 속 혼합물 분리 탐험대!</title>
+    <style>
+        body {
+            font-family: 'Malgun Gothic', sans-serif;
+            background-color: #f0f9ff;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        header {
+            text-align: center;
+            background-color: #7C4DFF;
+            color: white;
+            padding: 22px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h1 { margin: 0; font-size: 2.2em; }
+        p.subtitle { margin-top: 8px; font-size: 1.1em; opacity: 0.9; }
+        
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto 40px auto;
+        }
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            border-top: 6px solid #7C4DFF;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card-icon {
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .card h2 {
+            font-size: 1.25em;
+            color: #512DA8;
+            margin-top: 0;
+            border-bottom: 2px solid #EDE7F6;
+            padding-bottom: 8px;
+        }
+        ul {
+            padding-left: 20px;
+            line-height: 1.6;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #D84315;
+        }
+
+        /* 퀴즈 영역 스타일 */
+        .quiz-section {
+            max-width: 850px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border: 3px solid #FF9800;
+        }
+        .quiz-title {
+            text-align: center;
+            color: #E65100;
+            font-size: 1.8em;
+            margin-top: 0;
+        }
+        .quiz-card {
+            background: #FFF3E0;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #FFE0B2;
+        }
+        .quiz-question {
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            color: #E65100;
+        }
+        .quiz-options button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin: 6px 0;
+            background: white;
+            border: 2px solid #FFB74D;
+            border-radius: 8px;
+            text-align: left;
+            font-size: 1em;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .quiz-options button:hover {
+            background: #FFE082;
+        }
+        .quiz-options button.correct {
+            background: #C8E6C9;
+            border-color: #2E7D32;
+            font-weight: bold;
+        }
+        .quiz-options button.wrong {
+            background: #FFCDD2;
+            border-color: #E53935;
+        }
+        .score-board {
+            text-align: center;
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #2E7D32;
+            margin-top: 20px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #666;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🔬 생활 & 과학 속 혼합물 분리 탐험대</h1>
+        <p class="subtitle">마스크부터 혈액 분리까지, 우리 삶을 바꾼 신기한 분리의 기술!</p>
+    </header>
+
+    <!-- 카드 영역 -->
+    <div class="container">
+        <!-- 1. 거르기 (망/필터 이용) -->
+        <div class="card" style="border-color: #42A5F5;">
+            <div class="card-icon">😷</div>
+            <h2>1. 걸러서 분리하기 (망/필터)</h2>
+            <p>작은 구멍이 있는 <b>망이나 필터</b>를 이용해 원하는 것만 남겨요.</p>
+            <ul>
+                <li><span class="highlight">마스크:</span> 공기 중의 미세먼지를 걸러내고 깨끗한 공기만 마셔요.</li>
+                <li><span class="highlight">차 망 이용:</span> 차 망으로 찻잎을 걸러내고 따뜻한 차만 마셔요.</li>
+                <li><span class="highlight">원두커피 거르기:</span> 종이 필터로 커피 가루를 걸러내요.</li>
+            </ul>
+        </div>
+
+        <!-- 2. 짜내고 추출하기 -->
+        <div class="card" style="border-color: #66BB6A;">
+            <div class="card-icon">🍊</div>
+            <h2>2. 꾹 짜서 즙·기름 얻기</h2>
+            <p>식물이나 과일에 <b>힘을 가하거나 짜내어</b> 특정 성분만 얻어요.</p>
+            <ul>
+                <li><span class="highlight">과일 과즙 분리:</span> 과일을 꾹 눌러 짜서 새콤달콤한 즙만 모아요.</li>
+                <li><span class="highlight">콩기름 분리:</span> 콩을 꽉 눌러 꾹 짜내어 고소한 콩기름을 만들어요.</li>
+                <li><span class="highlight">한약 짜기:</span> 약틀로 꽉 짜서 한약재 건더기에서 약물만 빼내요.</li>
+            </ul>
+        </div>
+
+        <!-- 3. 특정 성분 분리하기 -->
+        <div class="card" style="border-color: #FFA726;">
+            <div class="card-icon">🌱</div>
+            <h2>3. 특정 성분만 쏙 빼내기</h2>
+            <p>혼합물 속에서 <b>원하는 영양소나 향기</b>만 과학적으로 분리해요.</p>
+            <ul>
+                <li><span class="highlight">콩 단백질 분리:</span> 콩에서 기름을 빼고 단백질 성분만 추출해 두부나 영양제를 만들어요.</li>
+                <li><span class="highlight">사탕수수 설탕 분리:</span> 사탕수수 즙을 끓이고 단단하게 결정으로 만들어 설탕만 분리해요.</li>
+                <li><span class="highlight">꽃에서 향 추출:</span> 아름다운 꽃에서 은은한 향기 성분만 따로 모아요.</li>
+                <li><span class="highlight">목화에서 솜과 씨:</span> 기계로 목화의 단단한 씨와 부드러운 솜을 분리해요.</li>
+            </ul>
+        </div>
+
+        <!-- 4. 첨단 과학 & 의학속 분리 -->
+        <div class="card" style="border-color: #EC407A;">
+            <div class="card-icon">🩸</div>
+            <h2>4. 첨단 과학 & 산업 속 분리</h2>
+            <p><b>회전하는 힘이나 끓는점 차이</b>를 이용한 고도의 분리 기술이에요.</p>
+            <ul>
+                <li><span class="highlight">혈액 성분 분리:</span> 병원에서 피를 빠르게 돌려 적혈구, 백혈구, 혈장(액체)으로 나눠 치료에 써요.</li>
+                <li><span class="highlight">벌집에서 꿀 분리:</span> 원심분리기에 넣고 빙글빙글 돌려 달콤한 꿀만 빼내요.</li>
+                <li><span class="highlight">우유에서 버터:</span> 우유를 세게 흔들어 고소한 지방(버터)을 분리해요.</li>
+                <li><span class="highlight">원유(석유) 분리:</span> 땅에서 푼 원유를 끓여 휘발유, 등유, 경유로 나눕니다.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 퀴즈 영역 -->
+    <div class="quiz-section">
+        <h2 class="quiz-title">🧩 개념 쏙쏙! 생활 & 과학 분리 퀴즈</h2>
+        <div id="quiz-container"></div>
+        <div id="score-board" class="score-board"></div>
+    </div>
+
+    <footer>
+        <p>어린이 과학교실 - 생활 & 과학 속 혼합물 분리 학습용 웹페이지</p>
+    </footer>
+
+    <!-- 자바스크립트 퀴즈 로직 -->
+    <script>
+        const quizData = [
+            {
+                question: "1. 우리가 쓰는 '마스크'는 무엇을 분리해 주는 물건일까요?",
+                options: ["물속의 소금", "공기 중의 미세먼지", "과일의 씨앗", "우유 속의 버터"],
+                answer: 1,
+                explanation: "마스크의 미세한 필터 망이 공기 중의 먼지나 바이러스를 걸러내어 줍니다!"
+            },
+            {
+                question: "2. 사탕수수 즙에서 우리 식탁에 올라오는 달콤한 '설탕'만 얻는 방법은 무엇일까요?",
+                options: ["자석 붙이기", "즙을 끓여서 결정으로 만들기", "체로 털어내기", "물에 띄우기"],
+                answer: 1,
+                explanation: "사탕수수 즙을 끓이고 말리면 하얀 설탕 결정만 따로 분리할 수 있어요!"
+            },
+            {
+                question: "3. 병원에서 환자를 치료하기 위해 '혈액(피)'을 여러 성분(적혈구, 혈장 등)으로 나눌 때 쓰는 방법은?",
+                options: ["원심분리기(빙글빙글 빠르게 돌리기)", "돋보기로 들여다보기", "햇볕에 바싹 말리기", "체로 거르기"],
+                answer: 0,
+                explanation: "피를 원심분리기에 넣고 매우 빠르게 돌리면 무거운 성분과 가벼운 성분이 층층이 분리돼요!"
+            },
+            {
+                question: "4. 콩을 꽉 눌러서 짜내면 얻을 수 있는 대표적인 분리 물질은 무엇일까요?",
+                options: ["콩기름", "설탕", "미세먼지", "소금"],
+                answer: 0,
+                explanation: "콩에 강한 힘을 가해 꾹 짜내면 고소한 콩기름을 분리해 낼 수 있어요!"
+            },
+            {
+                question: "5. 목화에서 부드러운 옷을 만들기 위해 떼어내야 하는 성분은 무엇일까요?",
+                options: ["꽃잎", "목화 씨", "줄기", "뿌리"],
+                answer: 1,
+                explanation: "부드러운 '솜'만 사용하기 위해 씨앗 분리 기계로 단단한 '씨'를 제거합니다!"
+            }
+        ];
+
+        let score = 0;
+        let answeredCount = 0;
+
+        function renderQuiz() {
+            const container = document.getElementById("quiz-container");
+            container.innerHTML = "";
+
+            quizData.forEach((q, qIndex) => {
+                const card = document.createElement("div");
+                card.className = "quiz-card";
+
+                const questionEl = document.createElement("div");
+                questionEl.className = "quiz-question";
+                questionEl.innerText = q.question;
+                card.appendChild(questionEl);
+
+                const optionsEl = document.createElement("div");
+                optionsEl.className = "quiz-options";
+
+                q.options.forEach((opt, optIndex) => {
+                    const btn = document.createElement("button");
+                    btn.innerText = `${optIndex + 1}) ${opt}`;
+                    btn.onclick = () => checkAnswer(qIndex, optIndex, btn);
+                    optionsEl.appendChild(btn);
+                });
+
+                card.appendChild(optionsEl);
+                container.appendChild(card);
+            });
+        }
+
+        function checkAnswer(qIndex, selectedIndex, btnElement) {
+            const currentQuiz = quizData[qIndex];
+            const parent = btnElement.parentElement;
+            const buttons = parent.querySelectorAll("button");
+
+            buttons.forEach(btn => btn.disabled = true);
+
+            if (selectedIndex === currentQuiz.answer) {
+                btnElement.classList.add("correct");
+                alert("⭕ 정답이에요!\n" + currentQuiz.explanation);
+                score++;
+            } else {
+                btnElement.classList.add("wrong");
+                buttons[currentQuiz.answer].classList.add("correct");
+                alert("❌ 아쉬워요!\n정답: " + currentQuiz.options[currentQuiz.answer] + "\n\n💡 " + currentQuiz.explanation);
+            }
+
+            answeredCount++;
+
+            if (answeredCount === quizData.length) {
+                document.getElementById("score-board").innerText = 
+                    `🎉 축하합니다! 총 ${quizData.length}문제 중 ${score}문제를 맞혔어요!`;
+            }
+        }
+
+        renderQuiz();
+    </script>
+
+</body>
+</html>
